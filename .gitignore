@@ -332,3 +332,7 @@ ASALocalRun/
 .mfractor/
 Kernel-Bridge/setup.inf
 Kernel-Bridge/setup.rpt
+
+# cmake
+out/
+CMakeSettings.json

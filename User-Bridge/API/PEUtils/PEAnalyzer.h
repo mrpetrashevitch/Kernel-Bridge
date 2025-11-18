@@ -3,6 +3,7 @@
 #include <vector>
 #include <unordered_map>
 #include <Windows.h>
+#include <string>
 
 /*
     RAW or Offset - offset from the beginning of file

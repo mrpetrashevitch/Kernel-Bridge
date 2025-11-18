@@ -1,5 +1,8 @@
 #pragma once
 
+#include <Windows.h>
+#include <fltUser.h>
+
 class CommPortPacket {
 public:
     CommPortPacket() = default;

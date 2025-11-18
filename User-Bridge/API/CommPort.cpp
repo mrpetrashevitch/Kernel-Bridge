@@ -1,6 +1,3 @@
-#include <Windows.h>
-#include <fltUser.h>
-
 #pragma comment(lib, "FltLib.lib")
 
 #include "CommPort.h"
