@@ -119,6 +119,7 @@
     <EnableInf2cat>true</EnableInf2cat>
     <IncludePath>../SharedTypes;../CommonTypes;$(VC_IncludePath);$(IncludePath)</IncludePath>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <TargetName>kbd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -127,6 +128,7 @@
     <EnableInf2cat>true</EnableInf2cat>
     <IncludePath>../SharedTypes;../CommonTypes;$(VC_IncludePath);$(IncludePath)</IncludePath>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <TargetName>kbd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -135,6 +137,7 @@
     <EnableInf2cat>true</EnableInf2cat>
     <IncludePath>../SharedTypes;../CommonTypes;$(VC_IncludePath);$(IncludePath)</IncludePath>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <TargetName>kbd</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -143,6 +146,7 @@
     <EnableInf2cat>true</EnableInf2cat>
     <IncludePath>../SharedTypes;../CommonTypes;$(VC_IncludePath);$(IncludePath)</IncludePath>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
+    <TargetName>kbd</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Link>

@@ -8,8 +8,8 @@
 
 namespace KbLoader
 {
-    static constexpr LPCWSTR KbDriverName = L"Kernel-Bridge";
-    static constexpr LPCWSTR KbDeviceName = L"\\\\.\\Kernel-Bridge";
+    static constexpr LPCWSTR KbDriverName = L"kbd";
+    static constexpr LPCWSTR KbDeviceName = L"\\\\.\\kbd";
     static HANDLE hDriver = INVALID_HANDLE_VALUE;
 }
 

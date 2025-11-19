@@ -8,8 +8,8 @@
 .Set CompressionType=MSZIP
 .Set Cabinet=on
 .Set Compress=on
-.Set CabinetNameTemplate=Kernel-Bridge.cab
+.Set CabinetNameTemplate=kbd.cab
 .Set DiskDirectoryTemplate=../Debug
-.Set DestinationDir=Kernel-Bridge
-../Debug/Kernel-Bridge.sys
+.Set DestinationDir=kbd
+../Debug/kbd.sys
 ../Debug/Kernel-Bridge.inf

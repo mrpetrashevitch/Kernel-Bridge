@@ -12,8 +12,8 @@
 #pragma prefast(disable:__WARNING_ENCODE_MEMBER_FUNCTION_POINTER, "Not valid for kernel mode drivers")
 
 namespace {
-    UNICODE_STRING DeviceName = RTL_CONSTANT_STRING(L"\\Device\\Kernel-Bridge");
-    UNICODE_STRING DeviceLink = RTL_CONSTANT_STRING(L"\\??\\Kernel-Bridge");
+    UNICODE_STRING DeviceName = RTL_CONSTANT_STRING(L"\\Device\\kbd");
+    UNICODE_STRING DeviceLink = RTL_CONSTANT_STRING(L"\\??\\kbd");
     PDEVICE_OBJECT DeviceInstance = NULL;
     PFLT_FILTER FilterHandle = NULL;
 }

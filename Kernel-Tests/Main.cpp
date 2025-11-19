@@ -443,7 +443,7 @@ int main()
     printf("[Kernel-Tests]: PID: %i, TID: %i\r\n", GetCurrentProcessId(), GetCurrentThreadId());
 
     if (KbLoader::KbLoadAsFilter(
-        L"C:\\Temp\\Kernel-Bridge\\Kernel-Bridge.sys",
+        L"C:\\Temp\\Kernel-Bridge\\kbd.sys",
         L"260000" // Altitude of minifilter
     )) {
         RunAllTests();

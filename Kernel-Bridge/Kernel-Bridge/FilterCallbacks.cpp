@@ -20,7 +20,7 @@
 namespace Communication {
     static CommPort Server;
 
-    LPCWSTR PortName = L"\\Kernel-Bridge"; 
+    LPCWSTR PortName = L"\\kbd"; 
 
     NTSTATUS StartServer(PFLT_FILTER FilterHandle) {
         return Server.StartServer(

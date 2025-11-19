@@ -39,7 +39,7 @@ private:
         Context.Client.ProcessId = GetCurrentProcessId();
         Context.Client.ThreadId = GetCurrentThreadId();
 
-        static LPCWSTR PortName = L"\\Kernel-Bridge";
+        static LPCWSTR PortName = L"\\kbd";
         Self->ConnectStatus = Self->Port.Connect(PortName, &Context, sizeof(Context));
         SetEvent(Self->hSubscriptionEvent);
         if (!SUCCEEDED(Self->ConnectStatus)) ExitThread(0);
