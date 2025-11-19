@@ -1403,7 +1403,7 @@ namespace Stuff
         KB_GET_PROC_BASE_ADDRESS_IN Input = {};
         KB_GET_PROC_BASE_ADDRESS_OUT Output = {};
         Input.ProcessId = ProcessId;
-        BOOL Status = KbSendRequest(Ctls::KbFindSignature, &Input, sizeof(Input), &Output, sizeof(Output));
+        BOOL Status = KbSendRequest(Ctls::KbGetProcBaseAddress, &Input, sizeof(Input), &Output, sizeof(Output));
         *BaseAddress = Output.Address;
         return Status;
     }
