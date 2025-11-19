@@ -466,4 +466,5 @@ namespace Stuff
         LPCSTR Mask, // "...?."
         OUT WdkTypes::PVOID* FoundAddress
     );
+    BOOL WINAPI KbGetProcBaseAddress(ULONG ProcessId, OUT WdkTypes::PVOID* BaseAddress);
 }

@@ -2,6 +2,7 @@
 #include <ntstrsafe.h>
 #include <stdarg.h>
 
+#include "imports.h"
 #include "WdkTypes.h"
 #include "CtlTypes.h"
 #include "IOCTLHandlers.h"
@@ -2358,6 +2359,34 @@ namespace
     }
 }
 
+NTSTATUS FASTCALL KbGetProcBaseAddress(IN PIOCTL_INFO RequestInfo, OUT PSIZE_T ResponseLength)
+{
+    if (
+        RequestInfo->InputBufferSize != sizeof(KB_GET_PROC_BASE_ADDRESS_IN) ||
+        RequestInfo->OutputBufferSize != sizeof(KB_GET_PROC_BASE_ADDRESS_OUT)
+        ) return STATUS_INFO_LENGTH_MISMATCH;
+
+    if (!RequestInfo->InputBuffer || !RequestInfo->OutputBuffer)
+        return STATUS_INVALID_PARAMETER;
+
+    auto Input = static_cast<PKB_GET_PROC_BASE_ADDRESS_IN>(RequestInfo->InputBuffer);
+    auto Output = static_cast<PKB_GET_PROC_BASE_ADDRESS_OUT>(RequestInfo->OutputBuffer);
+
+    PEPROCESS Process = NULL;
+    
+    Process = Processes::Descriptors::GetEPROCESS(reinterpret_cast<HANDLE>(Input->ProcessId));
+    if (!Process) {
+        return STATUS_NOT_FOUND;
+    }
+
+    Output->Address = (WdkTypes::PVOID)PsGetProcessSectionBaseAddress(Process);
+
+    ObDereferenceObject(Process);
+
+    *ResponseLength = sizeof(*Output);
+    return STATUS_SUCCESS;
+}
+
 NTSTATUS FASTCALL DispatchIOCTL(IN PIOCTL_INFO RequestInfo, OUT PSIZE_T ResponseLength)
 {
     using _CtlHandler = NTSTATUS(FASTCALL*)(IN PIOCTL_INFO, OUT PSIZE_T);
@@ -2485,7 +2514,8 @@ NTSTATUS FASTCALL DispatchIOCTL(IN PIOCTL_INFO RequestInfo, OUT PSIZE_T Response
         /* 91 */ KbGetKernelProcAddress,
         /* 92 */ KbStallExecutionProcessor,
         /* 93 */ KbBugCheck,
-        /* 94 */ KbFindSignature
+        /* 94 */ KbFindSignature,
+        /* 95 */ KbGetProcBaseAddress
     };
 
     USHORT Index = EXTRACT_CTL_CODE(RequestInfo->ControlCode) - CTL_BASE;

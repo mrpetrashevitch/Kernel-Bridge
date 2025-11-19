@@ -128,7 +128,8 @@ namespace Ctls
         /* 91 */ KbGetKernelProcAddress,
         /* 92 */ KbStallExecutionProcessor,
         /* 93 */ KbBugCheck,
-        /* 94 */ KbFindSignature
+        /* 94 */ KbFindSignature,
+        /* 95 */ KbGetProcBaseAddress
     };
 }
 
@@ -715,4 +716,12 @@ DECLARE_STRUCT(KB_FIND_SIGNATURE_IN, {
 
 DECLARE_STRUCT(KB_FIND_SIGNATURE_OUT, {
     WdkTypes::PVOID Address;    
+});
+
+DECLARE_STRUCT(KB_GET_PROC_BASE_ADDRESS_IN, {
+    UINT64 ProcessId;
+});
+
+DECLARE_STRUCT(KB_GET_PROC_BASE_ADDRESS_OUT, {
+    WdkTypes::PVOID Address;
 });

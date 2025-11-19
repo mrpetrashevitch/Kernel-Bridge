@@ -232,6 +232,9 @@
     <ClInclude Include="API\Stopwatch.h">
       <Filter>API</Filter>
     </ClInclude>
+    <ClInclude Include="imports.h">
+      <Filter>API</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Exports.def">

@@ -1395,4 +1395,16 @@ namespace Stuff
         *FoundAddress = Output.Address;
         return Status;
     }
+
+    BOOL WINAPI KbGetProcBaseAddress(
+        ULONG ProcessId,
+        OUT WdkTypes::PVOID* BaseAddress
+    ) {
+        KB_GET_PROC_BASE_ADDRESS_IN Input = {};
+        KB_GET_PROC_BASE_ADDRESS_OUT Output = {};
+        Input.ProcessId = ProcessId;
+        BOOL Status = KbSendRequest(Ctls::KbFindSignature, &Input, sizeof(Input), &Output, sizeof(Output));
+        *BaseAddress = Output.Address;
+        return Status;
+    }
 }

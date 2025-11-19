@@ -294,6 +294,7 @@
     <ClInclude Include="API\Signatures.h" />
     <ClInclude Include="API\Stopwatch.h" />
     <ClInclude Include="API\StringsAPI.h" />
+    <ClInclude Include="imports.h" />
     <ClInclude Include="Kernel-Bridge\DriverEvents.h" />
     <ClInclude Include="Kernel-Bridge\FilterCallbacks.h" />
     <ClInclude Include="Kernel-Bridge\IOCTLHandlers.h" />
